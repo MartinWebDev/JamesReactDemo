@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
+    "watch": "webpack --watch",
+    "serve": "webpack-dev-server --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,9 +20,12 @@
   },
   "homepage": "https://github.com/MartinWebDev/JamesReactDemo#readme",
   "devDependencies": {
+    "@types/react": "^16.0.0",
+    "@types/react-dom": "^15.5.2",
     "ts-loader": "^2.3.2",
     "typescript": "^2.4.2",
-    "webpack": "^3.4.1"
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.6.1"
   },
   "dependencies": {
     "react": "^15.6.1",

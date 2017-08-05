@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "module": "es2015", // This tells typescript which module loader system you use (es2015, commonjs, systemjs). Personally I like es2015.
+        "target": "es2015", // This is the module system to target, es2015 is compatible with most modern browsers. You can use es2017 and use keywords like async/await, but not many browsers support that yet.
+        "sourceMap": true, // Source maps mean you can use the browser developer tools to debug the tyepscript files rather than the compiled javascript files.
+        "jsx": "react", // What type of system used for JSX files. For this project, reactJS is our JSX system. JSX is basically javascript with HTML mixed in. 
+        "noImplicitAny": true, // Means you can't have variables with no type defined, even if the type is "any" you still have to write that. I like doing this as it's useful if you missed a type definiton.
+        "rootDir": "src", // Self-explanatory, where to find files.
+        "outDir": "./build/", //Self-explanatory, where to output files.
+        "preserveConstEnums": true, // Preserve "enums" you define with constants.
+        "removeComments": true, // Pretty obvious
+        "allowSyntheticDefaultImports": true, // This allows you to use "export default class MyClass ..." and "import MyClass from ..." rather than "export class MyClass ..." and "import { MyClass } from ...". Personally I don't like this as it leads to intellisense issues, but many libraries use it so you should enable it.
+        "experimentalDecorators": true, // Probably not going to be used here, at least not for a while, but these will be useful one day, so we'll allow it.
+        "allowJs": true, // Prety obvious, just in case we need something that isn't typescript. Try not to, but at least the option is there.
+        "typeRoots": [ // Folders where we can write our own typescript definition files. These are needed if we use a library that doesn't have a defintion file. We can write our own instead.
+            "/types"
+        ]
+    },
+    "exclude": [ // Simple, just an array of folders and files to exclude. Again, we always exclude node_modules
+        "node_modules",
+        "types"
+    ]
+}

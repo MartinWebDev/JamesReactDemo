@@ -1,0 +1,1 @@
+export const Greeting: string = "Hello James!";
