@@ -6,7 +6,7 @@
         "jsx": "react", // What type of system used for JSX files. For this project, reactJS is our JSX system. JSX is basically javascript with HTML mixed in. 
         "noImplicitAny": true, // Means you can't have variables with no type defined, even if the type is "any" you still have to write that. I like doing this as it's useful if you missed a type definiton.
         "rootDir": "src", // Self-explanatory, where to find files.
-        "outDir": "./build/", //Self-explanatory, where to output files.
+        "outDir": "./dist/", //Self-explanatory, where to output files.
         "preserveConstEnums": true, // Preserve "enums" you define with constants.
         "removeComments": true, // Pretty obvious
         "allowSyntheticDefaultImports": true, // This allows you to use "export default class MyClass ..." and "import MyClass from ..." rather than "export class MyClass ..." and "import { MyClass } from ...". Personally I don't like this as it leads to intellisense issues, but many libraries use it so you should enable it.
@@ -18,6 +18,9 @@
     },
     "exclude": [ // Simple, just an array of folders and files to exclude. Again, we always exclude node_modules
         "node_modules",
-        "types"
+        "types",
+        "tssrc", // TEMP - REMOVE LATER
+        "dist", // TEMP - Does it seriously need to exclude the folder it creates itself?
+        "webpack.config.js"
     ]
 }

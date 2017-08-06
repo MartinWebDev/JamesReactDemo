@@ -9,9 +9,11 @@ interface IState { }
 
 export class HelloWorld extends React.Component<IProps, IState> {
     render(): JSX.Element {
+        //debugger;
         return (
             <div>
-                Hello {this.props.name}
+                Hello {this.props.name}! <br />
+                How are you?
             </div>
         );
     }
