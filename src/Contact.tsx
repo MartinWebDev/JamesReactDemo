@@ -3,16 +3,15 @@ import * as React from "react";
 
 import {
     Route,
-    Link
+    Link,
+    RouteComponentProps
 } from 'react-router-dom';
 
-const Topic = ({ match }: any) => (
-    <div>
-        <h3>{match.params.topicId}</h3>
-    </div>
-);
+import { ContactForm } from './Contact/Form';
 
-export const ContactTab = ({ match }: any) => (
+interface IContactProps { }
+
+export const ContactTab = ({ match }: RouteComponentProps<IContactProps>) => (
     <div>
         <h2>Topics</h2>
         <ul>
@@ -33,7 +32,7 @@ export const ContactTab = ({ match }: any) => (
             </li>
         </ul>
 
-        <Route path={`${match.url}/:topicId`} component={Topic} />
+        <Route path={`${match.url}/:topicId`} component={ContactForm} />
         <Route exact path={match.url} render={() => (
             <h3>Please select a topic.</h3>
         )} />
