@@ -9,7 +9,6 @@ interface IState { }
 
 export class HelloWorld extends React.Component<IProps, IState> {
     render(): JSX.Element {
-        //debugger;
         return (
             <div>
                 Hello {this.props.name}! <br />

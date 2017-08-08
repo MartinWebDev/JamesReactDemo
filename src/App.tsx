@@ -8,65 +8,26 @@ import {
     Link
 } from 'react-router-dom';
 
-// Import child components
-import { HelloWorld } from './HelloWorld';
+// Import child components (tabs)
+import { HomeTab } from './HomeTab';
+import { AboutTab } from './AboutTab';
+import { ContactTab } from './Contact';
 
-const Home = () => (
-    <HelloWorld name="James" />
-);
-
-const About = () => (
-    <HelloWorld name="Martin" />
-);
-
-const Topic = ({ match }: any) => (
-    <div>
-        <h3>{match.params.topicId}</h3>
-    </div>
-)
-
-const Topics = ({ match }: any) => (
-    <div>
-        <h2>Topics</h2>
-        <ul>
-            <li>
-                <Link to={`${match.url}/rendering`}>
-                    Rendering with React
-                </Link>
-            </li>
-            <li>
-                <Link to={`${match.url}/components`}>
-                    Components
-                </Link>
-            </li>
-            <li>
-                <Link to={`${match.url}/props-v-state`}>
-                    Props v. State
-                </Link>
-            </li>
-        </ul>
-
-        <Route path={`${match.url}/:topicId`} component={Topic} />
-        <Route exact path={match.url} render={() => (
-            <h3>Please select a topic.</h3>
-        )} />
-    </div>
-);
-
+// Setup the bootstrapper for the app ready for react
 const AppRouterBootstrap = () => (
     <Router>
         <div>
             <ul>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/about">About</Link></li>
-                <li><Link to="/topics">Contact</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
             </ul>
 
             <hr />
 
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/topics" component={Topics} />
+            <Route exact path="/" component={HomeTab} />
+            <Route path="/about" component={AboutTab} />
+            <Route path="/contact" component={ContactTab} />
         </div>
     </Router>
 );

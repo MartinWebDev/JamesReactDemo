@@ -19,8 +19,9 @@
     "exclude": [ // Simple, just an array of folders and files to exclude. Again, we always exclude node_modules
         "node_modules",
         "types",
-        "tssrc", // TEMP - REMOVE LATER
+        "DEMO", // TEMP - REMOVE LATER
         "dist", // TEMP - Does it seriously need to exclude the folder it creates itself?
+        "build",
         "webpack.config.js"
     ]
 }
